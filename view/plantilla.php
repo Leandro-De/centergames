@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,6 +21,8 @@
     <link rel="stylesheet" href="view/dist/css/AdminLTE.css">
     <!-- AdminLTE Skins -->
     <link rel="stylesheet" href="view/dist/css/skins/_all-skins.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="view/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <!-- Favicon -->
@@ -43,7 +49,8 @@
                 $_GET["ruta"] == "customers" ||
                 $_GET["ruta"] == "sales" ||
                 $_GET["ruta"] == "new-sales" ||
-                $_GET["ruta"] == "report-sales"
+                $_GET["ruta"] == "report-sales" ||
+                $_GET["ruta"] == "exit"
             ) {
                 include "modules/" . $_GET["ruta"] . ".php";
             } else {
@@ -65,9 +72,13 @@
     <script src="view/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="view/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- DataTables -->
+    <script src="view/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="view/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="view/dist/js/adminlte.min.js"></script>
     <script src="view/js/plantilla.js"></script>
+    <script src="view/js/usuario.js"></script>
 </body>
 
 </html>

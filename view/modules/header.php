@@ -12,13 +12,17 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="view/img/users/user.png" alt="user" class="user-image">
-                        <span class="hidden-xs">Usuario Admin</span>
+                        <span class="hidden-xs">
+                            <?php
+                                echo $_SESSION["nombre"] 
+                            ?>
+                        </span>
                     </a>
                     <!-- Dropdown toggle -->
                     <ul class="dropdown-menu">
                         <li class="user-body">
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                <a href="exit" class="btn btn-default btn-flat">Salir</a>
                             </div>
                         </li>
                     </ul>
