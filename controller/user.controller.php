@@ -18,13 +18,19 @@ class ControllerUser
                 $response = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
                 if ($response["usuario"] == $_POST["ingUsuer"] && $response["password"] == $cifrar){
-                    $_SESSION["iniciarSesion"] = "ok";
-                    $_SESSION["nombre"] = $response["nombre"];
-                    $_SESSION["usuario"] = $response["usuario"];
-                    $_SESSION["perfil"] = $response["perfil"];
-                    echo '<script>
-                        window.location = "home";
-                    </script>';
+
+                    if($response["estado"] == 1){
+
+                        $_SESSION["iniciarSesion"] = "ok";
+                        $_SESSION["nombre"] = $response["nombre"];
+                        $_SESSION["usuario"] = $response["usuario"];
+                        $_SESSION["perfil"] = $response["perfil"];
+                        echo '<script>
+                            window.location = "home";
+                        </script>';
+                    }else{
+                        echo '<br><div class="alert alert-danger">Usuario no activado</div>';    
+                    }
                 }else{
                     echo '<br><div class="alert alert-danger">Error al ingresar</div>';
                 }
@@ -49,8 +55,9 @@ class ControllerUser
 
             if($response == 'ok'){
                 echo '<script>
-                    alert("Usuario creado");
-                </script>';
+                        window.location = "users";
+                    </script>';
+                
             }
          }
        } 

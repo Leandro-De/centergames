@@ -29,7 +29,7 @@
                <th>Usuario</th>
                <th>Perfil</th>
                <th>Estado</th>
-               <th>Ultimo login</th>
+               <!-- <th>Ultimo login</th> -->
                <th>Acciones</th>
              </tr>
            </thead>
@@ -45,12 +45,18 @@
                   <tr>
                     <td>'.$value["nombre"].'</td>
                     <td>'.$value["usuario"].'</td>
-                    <td>'.$value["perfil"].'</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>'.$value["ultimo_login"].'</td>
+                    <td>'.$value["perfil"].'</td>';
+                    
+                    if($value["estado"] != 0){
+                      echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                    }else{
+                      echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                    }
+                    
+                    echo '  
+                    
                     <td>
                       <div class="btn-group">
-                        <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
                         <button class="btn btn-danger"><i class="fa fa-times"></i></button>
                       </div>
                     </td>
@@ -128,71 +134,6 @@
           $crearUsuario = new ControllerUser();
           $crearUsuario->ctrCreateUser();
           ?>
-       </form>
-     </div>
-   </div>
- </div>
- <!-- Modal para editar usuario -->
-   <!-- Ventana modal -->
- <div id="modalEditarUsuario" class="modal fade" role="dialog">
-   <div class="modal-dialog">
-     <div class="modal-content">
-       <form role="form" method="post">
-         <div class="modal-header" style="background: #3c8dbc; color:#fff">
-           <h4 class="modal-title">Editar usuario</h4>
-         </div>
-         <div class="modal-body">
-           <div class="box-body">
-             <!-- new input -->
-             <div class="form-group">
-               <div class="input-group">
-                 <span class="input-group-addon">
-                   <i class="fa fa-user"></i>
-                 </span>
-                 <input type="text" class="form-control" name="updateName" id="updateName" value="Ingresar nombre" required>
-               </div>
-             </div>
-             <!-- new input -->
-             <div class="form-group">
-               <div class="input-group">
-                 <span class="input-group-addon">
-                   <i class="fa fa-key"></i>
-                 </span>
-                 <input type="text" class="form-control" name="updateUser" id="updateUser" value="Ingresar usuario" required>
-               </div> 
-             </div>
-             <!-- new input -->
-             <div class="form-group">
-               <div class="input-group">
-                 <span class="input-group-addon">
-                   <i class="fa fa-lock"></i>
-                 </span>
-                 <input type="password" class="form-control" name="updatePassword" id="updatePassword" placeholder="Nueva contraseña" required>
-               </div>
-             </div>
-             <!-- new input -->
-             <div class="form-group">
-               <div class="input-group">
-                 <span class="input-group-addon">
-                   <i class="fa fa-users"></i>
-                 </span>
-                 <select class="form-control" name="updateProfile">
-                   <option value="" id="editarPerfil"></option>
-                   <option value="Administrador">Administrador</option>
-                   <option value="Inventario">Inventario</option>
-                   <option value="Vendedor">Vendedor</option>
-                 </select>
-               </div>
-             </div>
-           </div>
-         </div>
-         <div class="modal-footer">
-           <button type="submit" class="btn btn-primary">Guardar</button>
-         </div>
-         <!-- <?php 
-          // $crearUsuario = new ControllerUser();
-          // $crearUsuario->ctrCreateUser();
-          ?> -->
        </form>
      </div>
    </div>
