@@ -56,4 +56,5 @@
             $stmt -> close();
             $stmt = null;
         }
+
     }

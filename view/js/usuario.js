@@ -32,3 +32,5 @@ $(".btnActivar").click(function(){
         $(this).attr('estadoUsuario', 0);
     }
 })
+
+

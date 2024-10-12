@@ -22,15 +22,13 @@
        </div>
 
        <div class="box-body">
-         <table class="table table-bordered table-striped">
+         <table class="table table-bordered table-striped tablas">
            <thead>
              <tr>
                <th>Nombre</th>
                <th>Usuario</th>
                <th>Perfil</th>
                <th>Estado</th>
-               <!-- <th>Ultimo login</th> -->
-               <th>Acciones</th>
              </tr>
            </thead>
            <tbody>
@@ -52,16 +50,6 @@
                     }else{
                       echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
                     }
-                    
-                    echo '  
-                    
-                    <td>
-                      <div class="btn-group">
-                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                      </div>
-                    </td>
-                  </tr>   
-                ';
               }
               ?>
            </tbody>

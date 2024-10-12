@@ -79,6 +79,7 @@
     <script src="view/dist/js/adminlte.min.js"></script>
     <script src="view/js/plantilla.js"></script>
     <script src="view/js/usuario.js"></script>
+    <script src="view/js/producto.js"></script>
 </body>
 
 </html>
