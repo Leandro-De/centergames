@@ -22,7 +22,7 @@
        </div>
 
        <div class="box-body">
-         <table class="table table-bordered table-striped">
+         <table class="table table-bordered table-striped tablas">
            <thead>
              <tr>
                <th>Nombre</th>
@@ -42,7 +42,7 @@
                       <td>'.$value["categoria"].'</td>
                       <td>
                       <div class="btn-group">
-                      <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>
                       <button class="btn btn-danger"><i class="fa fa-times"></i></button>
                       </div>
                       </td>
@@ -87,6 +87,39 @@
          <?php
           $crearCategoria = new ControladorCategorias();
           $crearCategoria->ctrCrearCategoria();
+          ?>
+       </form>
+     </div>
+   </div>
+ </div>
+
+ <!-- Ventana modal Editar categoria-->
+ <div id="modalEditarCategoria" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <form role="form" method="post">
+         <div class="modal-header" style="background: #3c8dbc; color:#fff">
+           <h4 class="modal-title">Editar categoría</h4>
+         </div>
+         <div class="modal-body">
+           <div class="box-body">
+             <!-- new input -->
+             <div class="form-group">
+               <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-th"></i>
+                 </span>
+                 <input type="text" class="form-control" name="editarCategoria" id="editarCategoria" placeholder="Nombre categoría" required>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="submit" class="btn btn-primary">Guardar</button>
+         </div>
+         <?php
+          //$crearCategoria = new ControladorCategorias();
+          //$crearCategoria->ctrCrearCategoria();
           ?>
        </form>
      </div>

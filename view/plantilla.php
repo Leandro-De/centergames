@@ -80,6 +80,7 @@
     <script src="view/js/plantilla.js"></script>
     <script src="view/js/usuario.js"></script>
     <script src="view/js/producto.js"></script>
+    <script src="view/js/categoria.js"></script>
 </body>
 
 </html>
